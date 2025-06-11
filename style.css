@@ -1,0 +1,163 @@
+html {
+    --sidebar-width: 16%;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    margin-left: var(--sidebar-width);
+    background-color: aliceblue;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid gray;
+    text-align: right;
+}
+
+main {
+    padding: 1rem;
+    margin-left: var(--sidebar-width);
+    background-color: aliceblue;
+    flex-grow: 1;
+}
+
+footer {
+    background-color: white;
+    padding: 1rem 1rem;
+    margin-left: var(--sidebar-width);
+    border-top: 1px solid gray;
+    margin-top: auto;
+}
+
+table {
+    border-collapse: collapse;
+    background-color: azure;
+    width: 100%;
+}
+
+table tr:nth-child(even) {
+    background-color: cadetblue;
+}
+
+th, td {
+    border-style: solid;
+    border-width: 1px;
+    padding: 1rem 1rem;
+}
+
+th {
+    background-color: navy;
+    color: white;
+}
+
+td {
+    border-color: black;
+}
+
+#tickets-container {
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 0 5px #0000006f ;
+}
+
+#queues-container {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    gap: 1rem;
+    display: flex;
+}
+
+#notification-icon {
+    font-size: 2rem;
+    line-height: 0;
+    margin-right: 2.5rem
+}
+
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: navy;
+    padding: 20px 0;
+    box-shadow: 0 0 10px black;
+}
+
+nav menu {
+    list-style-type: none;
+    padding: 0;
+    a {
+        color: cornflowerblue;
+        text-decoration: none;
+    }
+
+    li {
+        padding: 1rem 2rem;
+    }
+
+    li:hover {
+        background-color: darkslateblue;
+    }
+}
+
+#logo {
+    padding-inline: 1rem;
+    color: white;
+    font-weight: bold;
+}
+
+.main-button {
+    padding: 0.75rem 1rem;
+    background-color: navy;
+    color: white;
+    border: none;
+    margin-right: 5rem
+}
+
+#username {
+    margin-right: 3rem;
+}
+
+.queue {
+    padding: 0.5rem 1rem;
+    color: navy;
+    background-color: white;
+    border: 1px navy solid;
+}
+
+.queue.selected {
+    color: white;
+    background-color: navy;
+    border: 1px navy solid;
+}
+
+.priority {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 9999px;
+    display: inline-block;
+    border: 1px solid black;
+}
+
+.priority.critic {
+    background-color: red;
+}
+
+.priority.high {
+    background-color: yellow;
+}
+
+.priority.medium {
+    background-color: green;
+}
+
+.priority.low {
+    background-color: dodgerblue;
+}
