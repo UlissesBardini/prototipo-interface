@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Listagem de Chamados</title>
+</head>
+<body>
+    <nav>
+        <a id="logo">Sistema de Chamados</a>
+        <menu>
+            <li>
+                <a href="#">Chamados</a>
+                <ul>
+                    <li><a href="../chamados/cadastro.html">Cadastro</a></li>
+                    <li><a href="../chamados/listagem.html">Listagem</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)">Equipe</a></li>
+            <li><a href="javascript:void(0)">Relatórios</a></li>
+            <li><a href="javascript:void(0)">Configurações</a></li>
+        </menu>
+    </nav>
+</body>
+<main>
+  <div class="container">
+    <h2>Lista de Chamados</h2>
+
+    <form id="filterForm" class="filters">
+      <div>
+        <label for="filtroDescricao">Descrição</label>
+        <input type="text" id="filtroDescricao" name="descricao" placeholder="Buscar por palavras-chave...">
+      </div>
+
+      <div>
+        <label for="filtroTipo">Tipo de Problema</label>
+        <select id="filtroTipo" name="tipo">
+          <option value="">-- Todos --</option>
+          <option value="conexao">Conexão</option>
+          <option value="hardware">Hardware</option>
+          <option value="software">Software</option>
+          <option value="acesso">Acesso</option>
+          <option value="outro">Outro</option>
+        </select>
+      </div>
+
+      <div style="align-self: flex-end;">
+        <button type="submit">Filtrar</button>
+      </div>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Sistema</th>
+          <th>Tipo(s) de Problema</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Erro ao salvar pedido</td>
+          <td>ERP</td>
+          <td>Erro no sistema</td>
+          <td>Ao tentar salvar um pedido, o sistema retorna erro 500.</td>
+        </tr>
+        <tr>
+          <td>Demora no carregamento do painel</td>
+          <td>CRM</td>
+          <td>Sistema lento</td>
+          <td>O painel leva mais de 30 segundos para carregar completamente.</td>
+        </tr>
+        <tr>
+          <td>Usuário sem acesso ao financeiro</td>
+          <td>Financeiro</td>
+          <td>Problema de acesso</td>
+          <td>Mesmo com as permissões corretas, o usuário não acessa o módulo.</td>
+        </tr>
+        <tr>
+          <td>Inconsistência em relatórios</td>
+          <td>ERP, Financeiro</td>
+          <td>Problemas com dados</td>
+          <td>Os relatórios de vendas e financeiros apresentam valores diferentes.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+</html>

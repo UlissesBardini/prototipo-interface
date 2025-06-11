@@ -1,0 +1,252 @@
+html {
+    --sidebar-width: 16%;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    margin-left: var(--sidebar-width);
+    background-color: aliceblue;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid gray;
+    text-align: right;
+}
+
+main {
+    padding: 1rem;
+    margin-left: var(--sidebar-width);
+    background-color: aliceblue;
+    flex-grow: 1;
+}
+
+footer {
+    background-color: white;
+    padding: 1rem 1rem;
+    margin-left: var(--sidebar-width);
+    border-top: 1px solid gray;
+    margin-top: auto;
+}
+
+table {
+    border-collapse: collapse;
+    background-color: azure;
+    width: 100%;
+}
+
+table tr:nth-child(even) {
+    background-color: cadetblue;
+}
+
+th, td {
+    border-style: solid;
+    border-width: 1px;
+    padding: 1rem 1rem;
+}
+
+th {
+    background-color: navy;
+    color: white;
+}
+
+td {
+    border-color: black;
+}
+
+#tickets-container {
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 0 5px #0000006f ;
+}
+
+#queues-container {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    gap: 1rem;
+    display: flex;
+}
+
+#notification-icon {
+    font-size: 2rem;
+    line-height: 0;
+    margin-right: 2.5rem
+}
+
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: navy;
+    padding: 20px 0;
+    box-shadow: 0 0 10px black;
+}
+
+nav menu {
+    list-style-type: none;
+    padding: 0;
+    a {
+        color: cornflowerblue;
+        text-decoration: none;
+    }
+
+    li {
+        padding: 1rem 2rem;
+    }
+
+    li:hover {
+        background-color: darkslateblue;
+    }
+}
+
+#logo {
+    padding-inline: 1rem;
+    color: white;
+    font-weight: bold;
+}
+
+.main-button {
+    padding: 0.75rem 1rem;
+    background-color: navy;
+    color: white;
+    border: none;
+    margin-right: 5rem
+}
+
+#username {
+    margin-right: 3rem;
+}
+
+.queue {
+    padding: 0.5rem 1rem;
+    color: navy;
+    background-color: white;
+    border: 1px navy solid;
+}
+
+.queue.selected {
+    color: white;
+    background-color: navy;
+    border: 1px navy solid;
+}
+
+.priority {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 9999px;
+    display: inline-block;
+    border: 1px solid black;
+}
+
+.priority.critic {
+    background-color: red;
+}
+
+.priority.high {
+    background-color: yellow;
+}
+
+.priority.medium {
+    background-color: green;
+}
+
+.priority.low {
+    background-color: dodgerblue;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+select[multiple] {
+    height: 150px;
+}
+
+button {
+    margin-top: 2rem;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .filters > div {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 0.75rem;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f0f0f0;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
