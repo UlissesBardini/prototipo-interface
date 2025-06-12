@@ -65,7 +65,7 @@ td {
     box-shadow: 0 0 5px #0000006f ;
 }
 
-#queues-container {
+#filas-container {
     padding: 1rem;
     margin-bottom: 1rem;
     gap: 1rem;
@@ -125,20 +125,21 @@ nav menu {
     margin-right: 3rem;
 }
 
-.queue {
+.fila {
     padding: 0.5rem 1rem;
     color: navy;
     background-color: white;
     border: 1px navy solid;
+    cursor: pointer;
 }
 
-.queue.selected {
+.fila.selecionada {
     color: white;
     background-color: navy;
     border: 1px navy solid;
 }
 
-.priority {
+.prioridade {
     width: 1rem;
     height: 1rem;
     border-radius: 9999px;
@@ -146,18 +147,22 @@ nav menu {
     border: 1px solid black;
 }
 
-.priority.critic {
+.prioridade.critica {
     background-color: red;
 }
 
-.priority.high {
+.prioridade.alta {
     background-color: yellow;
 }
 
-.priority.medium {
+.prioridade.media {
     background-color: green;
 }
 
-.priority.low {
+.prioridade.baixa {
     background-color: dodgerblue;
+}
+
+.text-center {
+    text-align: center;
 }

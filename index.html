@@ -1,110 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="style.css" rel="stylesheet">
-  <title>Sistema de Chamados</title>
-</head>
-<body>
-  <nav>
-    <a href="./index.html" id="logo">Sistema de Chamados</a>
-    <menu>
-      <li>
-        <a href="#">Chamados</a>
-        <ul>
-          <li><a href="./chamados/cadastro.html">Cadastro</a></li>
-          <li><a href="./chamados/listagem.html">Listagem</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="javascript:void(0)">Colaboradores</a>
-        <ul>
-          <li><a href="./colaboradores/cadastro.html">Cadastro</a></li>
-          <li><a href="./colaboradores/listagem.html">Listagem</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="javascript:void(0)">Relatórios</a>
-        <ul>
-          <li><a href="./relatorios/listagem.html">Listagem</a></li>
-        </ul>
-      </li>
-      <li><a href="javascript:void(0)">Configurações</a></li>
-    </menu>
-  </nav>
-  <header>
-    <button class="main-button">Abrir Chamado</button>
-    <a id="notification-icon">&#9993;</a>
-    <a id="username">Ulisses &#709;</a>
-  </header>
-  <main>
-    <div id="queues-container">
-      <button class="queue selected">Abertos (10)</button>
-      <button class="queue">Para mim (5)</button>
-      <button class="queue">Para outros (2)</button>
-      <button class="queue">Sem Atendente (3)</button>
-      <button class="queue">Em Breve (0)</button>
-      <button class="queue">Atrasados (1)</button>
-    </div>
-    <div id="tickets-container">
-      <table>
-        <thead>
-          <tr>
-            <th><input type="checkbox"> ID</th>
-            <th>Atualizado Em</th>
-            <th>Atendente</th>
-            <th>Tópico</th>
-            <th>Status</th>
-            <th>Prioridade</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><input type="checkbox"> 1</td>
-            <td>30/04/2025</td>
-            <td>Henrique</td>
-            <td>Notebook superaquecendo</td>
-            <td>Novo</td>
-            <td>
-              <div class="priority critic"></div> Crítica
-            </td>
-          </tr>
-          <tr>
-            <td><input type="checkbox"> 2</td>
-            <td>30/04/2025</td>
-            <td>Ulisses</td>
-            <td>Monitor não dá vídeo</td>
-            <td>Esperando resposta</td>
-            <td>
-              <div class="priority high"></div> Alta
-            </td>
-          </tr>
-          <tr>
-            <td><input type="checkbox"> 3</td>
-            <td>30/04/2025</td>
-            <td>Botega</td>
-            <td>Impressora sem tinta</td>
-            <td>Respondido</td>
-            <td>
-              <div class="priority medium"></div> Média
-            </td>
-          </tr>
-          <tr>
-            <td><input type="checkbox"> 4</td>
-            <td>30/04/2025</td>
-            <td>Augusto</td>
-            <td>Celular não conecta no Wi-fi</td>
-            <td>Esperando resposta</td>
-            <td>
-              <div class="priority low"></div> Baixa
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </main>
-  <footer>Todos os direitos reservados. Equipe: Henrique Delevati, Augusto Biehl, Mateus Botega e Ulisses Bardini
-  </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <title>Sistema de Chamados</title>
+  </head>
+
+  <body>
+    <nav>
+      <a href="./index.html" id="logo">Sistema de Chamados</a>
+      <menu>
+        <li>
+          <a href="#">Chamados</a>
+          <ul>
+            <li><a href="./chamados/cadastro.html">Cadastro</a></li>
+            <li><a href="./chamados/listagem.html">Listagem</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="javascript:void(0)">Colaboradores</a>
+          <ul>
+            <li><a href="./colaboradores/cadastro.html">Cadastro</a></li>
+            <li><a href="./colaboradores/listagem.html">Listagem</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="javascript:void(0)">Relatórios</a>
+          <ul>
+            <li><a href="./relatorios/listagem.html">Listagem</a></li>
+          </ul>
+        </li>
+        <li><a href="javascript:void(0)">Configurações</a></li>
+      </menu>
+    </nav>
+    <header>
+      <button class="main-button">Abrir Chamado</button>
+      <a id="notification-icon">&#9993;</a>
+      <a id="username">Ulisses &#709;</a>
+    </header>
+    <main>
+      <div id="filas-container"></div>
+      <div id="tickets-container">
+        <table>
+          <thead>
+            <tr>
+              <th><input type="checkbox" id="check-todos" onclick="selecionarTodos()"/> ID</th>
+              <th>Atualizado Em</th>
+              <th>Atendente</th>
+              <th>Tópico</th>
+              <th>Status</th>
+              <th>Prioridade</th>
+            </tr>
+          </thead>
+          <tbody id="lista-chamados"></tbody>
+        </table>
+      </div>
+    </main>
+    <footer>
+      Todos os direitos reservados. Equipe: Henrique Delevati, Augusto Biehl, Mateus Botega e Ulisses Bardini
+    </footer>
+    <script src="index.js" lang="js"></script>
+  </body>
 </html>
