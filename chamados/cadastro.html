@@ -1,56 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
-    <title>Cadastro - Chamados</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <title>Cadastro de Chamados</title>
 </head>
 <body>
-    <nav>
-        <a id="logo">Sistema de Chamados</a>
-        <menu>
-            <li>
-                <a href="#">Chamados</a>
-                <ul>
-                    <li><a href="../chamados/cadastro.html">Cadastro</a></li>
-                    <li><a href="../chamados/listagem.html">Listagem</a></li>
-                </ul>
-            </li>
-            <li><a href="javascript:void(0)">Equipe</a></li>
-            <li><a href="javascript:void(0)">Relatórios</a></li>
-            <li><a href="javascript:void(0)">Configurações</a></li>
-        </menu>
-    </nav>
+  <nav>
+    <a href="../index.html" id="logo">Sistema de Chamados</a>
+    <menu>
+      <li>
+        <a href="#">Chamados</a>
+        <ul>
+          <li><a href="../chamados/cadastro.html">Cadastro</a></li>
+          <li><a href="../chamados/listagem.html">Listagem</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="javascript:void(0)">Colaboradores</a>
+        <ul>
+          <li><a href="../colaboradores/cadastro.html">Cadastro</a></li>
+          <li><a href="../colaboradores/listagem.html">Listagem</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="javascript:void(0)">Relatórios</a>
+        <ul>
+          <li><a href="../relatorios/listagem.html">Listagem</a></li>
+        </ul>
+      </li>
+      <li><a href="javascript:void(0)">Configurações</a></li>
+    </menu>
+  </nav>
 </body>
 <main>
-    <div class="container">
-        <h2>Cadastro de Chamado</h2>
-        <form action="/salvar-chamado" method="POST">
+  <div class="container">
+      <h2>Cadastro de Chamado</h2>
+      <form action="#" method="POST">
         <label for="titulo">Título</label>
         <input type="text" id="titulo" name="titulo" required>
     
         <label for="sistemas">Sistema(s)</label>
         <select id="sistemas" name="sistemas[]" multiple required>
-            <option value="Financeiro">Sistema Financeiro</option>
-            <option value="Inventario">Sistema de Inventário</option>
-            <option value="Contagem">Sistema de Contagem</option>
+          <option value="Financeiro">Sistema Financeiro</option>
+          <option value="Inventario">Sistema de Inventário</option>
+          <option value="Contagem">Sistema de Contagem</option>
         </select>
     
         <label for="tipos">Tipo(s) de Problema</label>
         <select id="tipos" name="tipos[]" multiple required>
-            <option value="conexao">Conexão</option>
-            <option value="hardware">Hardware</option>
-            <option value="software">Software</option>
-            <option value="acesso">Acesso</option>
-            <option value="outro">Outro</option>
+          <option value="conexao">Conexão</option>
+          <option value="hardware">Hardware</option>
+          <option value="software">Software</option>
+          <option value="acesso">Acesso</option>
+          <option value="outro">Outro</option>
         </select>
 
         <label for="descricao">Descrição Detalhada</label>
         <textarea id="descricao" name="descricao" rows="6" placeholder="Descreva o problema com o máximo de detalhes..." required></textarea>
     
         <button type="submit">Salvar</button>
-        </form>
-    </div>
+      </form>
+  </div>
 </main>
 </html>

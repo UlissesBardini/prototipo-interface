@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Listagem de Chamados</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Listagem de Chamados</title>
 </head>
 <body>
-    <nav>
-        <a id="logo">Sistema de Chamados</a>
-        <menu>
-            <li>
-                <a href="#">Chamados</a>
-                <ul>
-                    <li><a href="../chamados/cadastro.html">Cadastro</a></li>
-                    <li><a href="../chamados/listagem.html">Listagem</a></li>
-                </ul>
-            </li>
-            <li><a href="javascript:void(0)">Equipe</a></li>
-            <li><a href="javascript:void(0)">Relatórios</a></li>
-            <li><a href="javascript:void(0)">Configurações</a></li>
-        </menu>
-    </nav>
+  <nav>
+    <a href="../index.html" id="logo">Sistema de Chamados</a>
+    <menu>
+      <li>
+        <a href="#">Chamados</a>
+        <ul>
+          <li><a href="../chamados/cadastro.html">Cadastro</a></li>
+          <li><a href="../chamados/listagem.html">Listagem</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="javascript:void(0)">Colaboradores</a>
+        <ul>
+          <li><a href="../colaboradores/cadastro.html">Cadastro</a></li>
+          <li><a href="../colaboradores/listagem.html">Listagem</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="javascript:void(0)">Relatórios</a>
+        <ul>
+          <li><a href="../relatorios/listagem.html">Listagem</a></li>
+        </ul>
+      </li>
+      <li><a href="javascript:void(0)">Configurações</a></li>
+    </menu>
+  </nav>
 </body>
 <main>
   <div class="container">
@@ -50,42 +61,54 @@
       </div>
     </form>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Título</th>
-          <th>Sistema</th>
-          <th>Tipo(s) de Problema</th>
-          <th>Descrição</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Erro ao salvar pedido</td>
-          <td>ERP</td>
-          <td>Erro no sistema</td>
-          <td>Ao tentar salvar um pedido, o sistema retorna erro 500.</td>
-        </tr>
-        <tr>
-          <td>Demora no carregamento do painel</td>
-          <td>CRM</td>
-          <td>Sistema lento</td>
-          <td>O painel leva mais de 30 segundos para carregar completamente.</td>
-        </tr>
-        <tr>
-          <td>Usuário sem acesso ao financeiro</td>
-          <td>Financeiro</td>
-          <td>Problema de acesso</td>
-          <td>Mesmo com as permissões corretas, o usuário não acessa o módulo.</td>
-        </tr>
-        <tr>
-          <td>Inconsistência em relatórios</td>
-          <td>ERP, Financeiro</td>
-          <td>Problemas com dados</td>
-          <td>Os relatórios de vendas e financeiros apresentam valores diferentes.</td>
-        </tr>
-      </tbody>
-    </table>
+    <div id="tickets-container">
+      <table>
+        <thead>
+          <tr>
+            <th><input type="checkbox"> ID</th>
+            <th>Atualizado Em</th>
+            <th>Atendente</th>
+            <th>Tópico</th>
+            <th>Status</th>
+            <th>Prioridade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox"> 1</td>
+            <td>30/04/2025</td>
+            <td>Henrique</td>
+            <td>Notebook superaquecendo</td>
+            <td>Novo</td>
+            <td><div class="priority critic"></div> Crítica</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"> 2</td>
+            <td>30/04/2025</td>
+            <td>Ulisses</td>
+            <td>Monitor não dá vídeo</td>
+            <td>Esperando resposta</td>
+            <td><div class="priority high"></div> Alta</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"> 3</td>
+            <td>30/04/2025</td>
+            <td>Botega</td>
+            <td>Impressora sem tinta</td>
+            <td>Respondido</td>
+            <td><div class="priority medium"></div> Média</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"> 4</td>
+            <td>30/04/2025</td>
+            <td>Augusto</td>
+            <td>Celular não conecta no Wi-fi</td>
+            <td>Esperando resposta</td>
+            <td><div class="priority low"></div> Baixa</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </main>
 </html>
