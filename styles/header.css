@@ -1,0 +1,38 @@
+header {
+    display: flex;
+    background-color: aliceblue;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid gray;
+    text-align: right;
+    flex-direction: row;
+    align-items: center;
+}
+
+#username {
+    vertical-align: middle;
+}
+
+.username-container {
+    width: 10rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: 1rem;
+}
+
+.botao-header-container {
+    flex: 1;
+}
+
+.foto-perfil {
+    height: 40px;
+    margin-right: 2rem;
+    vertical-align: middle;
+}
+
+.main-button {
+    border: none;
+    margin-right: 3rem;
+    text-decoration: none;
+    font-size: 0.8rem;
+}

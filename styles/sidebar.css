@@ -1,0 +1,120 @@
+html {
+    --cor-texto-sidebar: cornflowerblue
+}
+
+#sidebar {
+    box-sizing: border-box;
+    min-height: 100vh;
+    width: var(--sidebar-width);
+    background-color: var(--cor-principal);
+    box-shadow: 0 0 10px black;
+    position: sticky;
+    top: 0;
+    align-self: start;
+    overflow: hidden;
+    text-wrap: nowrap;
+    transition: 300ms ease-in-out;
+}
+
+#sidebar.close {
+    --sidebar-width: 3.5rem
+}
+
+#sidebar menu, #logo {
+    transition: 300ms ease-in-out;
+}
+
+#sidebar.close menu {
+    margin-left: 4rem;
+    opacity: 0;
+}
+
+#sidebar.close #logo {
+    opacity: 0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+#logo {
+    padding-inline: 1rem;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    flex: 1;
+    font-size: 18px
+}
+
+#toggle-btn {
+    margin-left: auto;
+    border: none;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+}
+
+#sidebar menu {
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar > menu a,
+#sidebar > menu button.dropdown-btn {
+    display: flex;
+    align-items: center;
+    color: var(--cor-texto-sidebar);
+    text-decoration: none;
+    padding: 1rem 2rem;
+}
+
+#sidebar > menu a:hover,
+#sidebar > menu .dropdown-btn:hover,
+#toggle-btn:hover {
+    background-color: var(--cor-principal-hover);
+}
+
+.dropdown-btn {
+    width: 100%;
+    text-align: left;
+    border: none;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+#sidebar > menu li.active a {
+    font-weight: bold;
+    color: white;
+}
+
+#sidebar .dropdown-btn span {
+    flex-grow: 1;
+}
+
+#sidebar svg {
+    flex-shrink: 0;
+    fill: var(--cor-texto-sidebar);
+    transition: rotate 200ms ease;
+}
+
+#sidebar .submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 400ms ease;
+}
+
+#sidebar .submenu a {
+    padding-left: 3rem;
+}
+
+#sidebar .submenu.show {
+    max-height: 100px;
+}
+
+.rotate svg {
+    rotate: -180deg;
+}

@@ -1,0 +1,32 @@
+table {
+    border-collapse: collapse;
+    background-color: azure;
+    width: 100%;
+}
+
+table tr:nth-child(even) {
+    background-color: #b0dddd;
+}
+
+th, td {
+    border-style: solid;
+    border-width: 1px;
+    padding: 1rem 1rem;
+}
+
+th {
+    background-color: var(--cor-principal);
+    color: white;
+}
+
+td {
+    border-color: black;
+}
+
+td a {
+    color: var(--cor-principal-hover)
+}
+
+tr:hover td {
+    background-color: white;
+}

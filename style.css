@@ -1,5 +1,11 @@
+@import url(styles/sidebar.css);
+@import url(styles/header.css);
+@import url(styles/table.css);
+
 html {
-    --sidebar-width: 16%;
+    --cor-principal: navy;
+    --cor-principal-hover: #2020a0;
+    --sidebar-width: 18rem;
 }
 
 body {
@@ -7,162 +13,95 @@ body {
     margin: 0;
     min-height: 100vh;
     height: auto;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar main"
+        "sidebar footer";
+}
+
+nav {
+    grid-area: sidebar;
 }
 
 header {
-    margin-left: var(--sidebar-width);
-    background-color: aliceblue;
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid gray;
-    text-align: right;
+    grid-area: header;
 }
 
 main {
+    grid-area: main;
     padding: 1rem;
-    margin-left: var(--sidebar-width);
     background-color: aliceblue;
-    flex-grow: 1;
 }
 
 footer {
+    grid-area: footer;
     background-color: white;
     padding: 1rem 1rem;
-    margin-left: var(--sidebar-width);
     border-top: 1px solid gray;
     margin-top: auto;
 }
 
-table {
-    border-collapse: collapse;
-    background-color: azure;
-    width: 100%;
-}
-
-table tr:nth-child(even) {
-    background-color: cadetblue;
-}
-
-th, td {
-    border-style: solid;
-    border-width: 1px;
-    padding: 1rem 1rem;
-}
-
-th {
-    background-color: navy;
+.btn {
+    background-color: var(--cor-principal);
     color: white;
-}
-
-td {
-    border-color: black;
-}
-
-#tickets-container {
-    padding: 1rem;
-    background-color: white;
-    box-shadow: 0 0 5px #0000006f ;
-}
-
-#filas-container {
-    padding: 1rem;
-    margin-bottom: 1rem;
-    gap: 1rem;
-    display: flex;
-}
-
-#notification-icon {
-    font-size: 2rem;
-    line-height: 0;
-    margin-right: 2.5rem
-}
-
-nav {
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: var(--sidebar-width);
-    height: 100vh;
-    background: navy;
-    padding: 20px 0;
-    box-shadow: 0 0 10px black;
-}
-
-nav menu {
-    list-style-type: none;
-    padding: 0;
-    a {
-        color: cornflowerblue;
-        text-decoration: none;
-    }
-
-    li {
-        padding: 1rem 2rem;
-    }
-
-    li:hover {
-        background-color: darkslateblue;
-    }
-}
-
-#logo {
-    padding-inline: 1rem;
-    color: white;
-    font-weight: bold;
-}
-
-.main-button {
     padding: 0.75rem 1rem;
-    background-color: navy;
-    color: white;
-    border: none;
-    margin-right: 5rem
+    border-radius: 3px;
 }
 
-#username {
-    margin-right: 3rem;
-}
-
-.fila {
-    padding: 0.5rem 1rem;
-    color: navy;
-    background-color: white;
-    border: 1px navy solid;
+button.btn {
     cursor: pointer;
+    border-style: none;
 }
 
-.fila.selecionada {
-    color: white;
-    background-color: navy;
-    border: 1px navy solid;
+.btn:hover {
+    background-color: var(--cor-principal-hover);
 }
 
-.prioridade {
-    width: 1rem;
-    height: 1rem;
-    border-radius: 9999px;
-    display: inline-block;
-    border: 1px solid black;
-}
-
-.prioridade.critica {
-    background-color: red;
-}
-
-.prioridade.alta {
-    background-color: yellow;
-}
-
-.prioridade.media {
-    background-color: green;
-}
-
-.prioridade.baixa {
-    background-color: dodgerblue;
+.btn.submit {
+    max-height: min-content;
+    max-width: 8rem;
+    margin-top: auto;
 }
 
 .text-center {
     text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.items-center {
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    max-width: 100%;
+    margin: auto;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.campo label {
+    margin-bottom: 0.5rem;
+}
+
+.campo input[type="text"],
+.campo textarea,
+.campo select {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+    border-radius: 3px;
+    box-sizing: border-box;
 }

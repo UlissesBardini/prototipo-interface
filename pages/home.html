@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Chamados</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/styles/home.css"/>
+  <script src="/scripts/sidebar.js" defer></script>
+  <script src="/scripts/header.js" defer></script>
+  <script src="/scripts/home.js" defer></script>
+  </head>
+
+  <body>
+    <nav id="sidebar"></nav>
+    <header id="header"></header>
+    <main>
+      <div id="filas-container"></div>
+      <div id="chamados-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Atualizado Em</th>
+              <th class="text-left">Atendente</th>
+              <th class="text-left">Tópico</th>
+              <th class="text-left">Status</th>
+              <th>Prioridade</th>
+            </tr>
+          </thead>
+          <tbody id="lista-chamados"></tbody>
+        </table>
+      </div>
+    </main>
+    <footer>
+      Todos os direitos reservados. Equipe: Henrique Delevati, Augusto Biehl, Mateus Botega e Ulisses Bardini
+    </footer>
+  </body>
+</html>
