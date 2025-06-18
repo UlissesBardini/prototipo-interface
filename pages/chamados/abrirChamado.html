@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css"/>
+  <script src="/scripts/util.js" defer></script>
+  <script src="/scripts/header.js" defer></script>
+  <script src="/scripts/sidebar.js" defer></script>
+  <script src="/scripts/chamados.js" defer></script>
+  <title>Sistema de Chamados</title>
+</head>
+<body>
+  <main>
+    <h1>Abrir Chamado</h1>
+    <div class="container">
+      <div class="campo">
+        <label for="campoTitulo">Título<span class="obrigatorio">*</span></label>
+        <input type="text" id="campoTitulo" name="titulo" placeholder="">
+      </div>
+      <div class="campo">
+        <label for="campoSistema">Sistema</label>
+        <select id="campoSistema" name="sistema">
+          <option value="">Selecione...</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="campoTipo">Tipo de Problema<span class="obrigatorio">*</span></label>
+        <select id="campoTipo" name="tipo">
+          <option value="">Selecione...</option>
+        </select>
+      </div>
+    </div>
+    <div class="container">
+      <div class="campo">
+        <label for="campoDescricao">Descrição<span class="obrigatorio">*</span></label>
+        <textarea
+          id="campoDescricao"
+          name="descricao"
+          rows="8"
+          placeholder="Descreva o problema em detalhes"
+        ></textarea>
+      </div>
+    </div>
+    <div class="container">
+      <button class="btn submit" onclick="salvar()">Salvar</button>
+    </div>
+  </main>
+  <footer>
+    Todos os direitos reservados. Equipe: Henrique Delevati, Augusto Biehl, Mateus Botega e Ulisses Bardini
+  </footer>
+</body>
+</html>

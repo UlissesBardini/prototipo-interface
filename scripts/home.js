@@ -1,4 +1,4 @@
-const MEU_NOME = "Ulisses"
+const DIA = 24 * 60 * 60 * 1000;
 
 const chamados = getChamados();
 let chamadosFiltrados = [];
@@ -19,9 +19,13 @@ const filtroFila = {
     "Para mim": (chamado) => chamado.atendente === MEU_NOME,
     "Para outros": (chamado) => chamado.atendente !== MEU_NOME,
     "Sem Atendente": (chamado) => !chamado.atendente,
-    "Em Breve": (chamado) => true,
-    "Atrasados": (chamado) => false,
+    "Em Breve": (chamado) => !isChamadoAtrasado(chamado),
+    "Atrasados": (chamado) => isChamadoAtrasado(chamado)
 };
+
+function isChamadoAtrasado(chamado) {
+    return Math.ceil(Math.abs((new Date() - new Date(chamado.criadoEm)) / DIA)) > 10;
+}
 
 function computarFilas() {
     for (const fila of filas) {
@@ -40,8 +44,7 @@ const listaChamados = document.getElementById("lista-chamados");
 const filasContainer = document.getElementById("filas-container");
 
 function getChamados() {
-    const chamados = localStorage.getItem("chamados") ?? [];
-    return JSON.parse(chamados)
+    return getListaLocalStorage("chamados")
         .filter(chamado => !["Concluído", "Cancelado"].includes(chamado.status))
         .sort((c1,c2) => -(c1.atualizadoEm.localeCompare(c2.atualizadoEm)));
 }
@@ -66,18 +69,18 @@ function renderChamados() {
 
     for (const chamado of chamadosFiltrados) {
         listaChamados.innerHTML += `<tr>
-            <td class="text-center"><a href="/chamados/visualizar.html?id=${chamado.id}">${chamado.id}</a></td>
+            <td class="text-center"><a href="/pages/chamados/visualizar.html?id=${chamado.id}">${chamado.id}</a></td>
             <td class="text-center">${formatarData(chamado.atualizadoEm)}</td>
-            <td>${chamado.atendente}</td>
-            <td>${chamado.topico}</td>
+            <td>${chamado.atendente ?? "--"}</td>
+            <td>${chamado.titulo}</td>
             <td>${chamado.status}</td>
-            <td class="items-center"><div class="prioridade ${prioridadeClass[chamado.prioridade]}"></div> ${chamado.prioridade}</td>
+            <td>${chamado.prioridade
+                    ? `<div class="prioridade ${prioridadeClass[chamado.prioridade]}"></div> ${chamado.prioridade}`
+                    : "--"
+                }
+            </td>
         </tr>`;
     }
-}
-
-function formatarData(dataStr) {
-    return new Date(dataStr).toLocaleString('fr-FR');
 }
 
 function selecionarFila(fila) {
@@ -87,7 +90,6 @@ function selecionarFila(fila) {
         filaSelecionada = fila;
         chamadosFiltrados = chamados.filter(filtroFila[fila]);
         renderChamados();
-        desselecionarTodos();
     }
 }
 

@@ -1,4 +1,5 @@
-const sidebar = document.getElementById("sidebar");
+const sidebar = document.createElement("nav");
+sidebar.id = "sidebar";
 
 sidebar.innerHTML = `
 <div class="logo-container">
@@ -8,16 +9,7 @@ sidebar.innerHTML = `
     <a href="/pages/home.html" id="logo">Sistema de Chamados</a>
 </div>
 <menu id="main-menu">
-    <li>
-        <button class="dropdown-btn">
-            <span>Chamados</span>
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-        </button>
-        <menu class="submenu">
-            <li><a href="/pages/chamados/cadastro.html">Cadastro</a></li>
-            <li><a href="/pages/chamados/listagem.html">Listagem</a></li>
-        </menu>
-    </li>
+    <li><a href="/pages/chamados/listagem.html">Chamados</a></li>
     <li>
         <button class="dropdown-btn">
             <span>Colaboradores</span>
@@ -32,6 +24,7 @@ sidebar.innerHTML = `
 </menu>
 `;
 
+document.body.prepend(sidebar);
 const toggleButton = document.getElementById("toggle-btn");
 const mainMenu = document.getElementById("main-menu");
 

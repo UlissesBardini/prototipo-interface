@@ -2,6 +2,7 @@ table {
     border-collapse: collapse;
     background-color: azure;
     width: 100%;
+    overflow: hidden;
 }
 
 table tr:nth-child(even) {
@@ -17,10 +18,18 @@ th, td {
 th {
     background-color: var(--cor-principal);
     color: white;
+    border-color: black;
+}
+
+th:not(:last-child) {
+    border-right-color: white;
 }
 
 td {
     border-color: black;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 td a {

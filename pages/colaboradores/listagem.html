@@ -3,69 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Listagem de Colaboradores</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Sistema de Chamados</title>
   <link rel="stylesheet" href="/style.css"/>
+  <script src="/scripts/util.js" defer></script>
   <script src="/scripts/sidebar.js" defer></script>
   <script src="/scripts/header.js" defer></script>
+  <script src="/scripts/colaboradores.js" defer></script>
 </head>
 <body>
-  <nav id="sidebar"></nav>
-  <header id="header"></header>
   <main>
+    <h1>Listar colaboradores</h1>
     <div class="container">
-      <h2>Lista de Colaboradores</h2>
-      <form id="filterForm" class="filters">
-        <div>
-          <label for="filtroNome">Nome</label>
-          <input type="text" id="filtroNome" name="nome" placeholder="Buscar por nome...">
-        </div>
-
-        <div>
-          <label for="filtroCPF">CPF</label>
-          <input type="text" id="filtroCPF" name="cpf" placeholder="000.000.000-00" maxlength="14">
-        </div>
-
-        <div style="align-self: flex-end;">
-          <button type="submit">Filtrar</button>
-        </div>
-      </form>
-
+      <div class="campo">
+        <label for="filtroNome">Nome</label>
+        <input type="text" id="filtroTitulo" name="titulo" placeholder="Busca por nome">
+      </div>
+      <div class="campo">
+        <label for="filtroTipo">Tipo</label>
+        <select id="filtroTipo" name="tipo">
+          <option value="">Selecione...</option>
+        </select>
+      </div>
+      <div class="campo">
+        <button onclick="filtrar()" class="btn submit">Filtrar</button>
+      </div>
+    </div>
+    <div style="margin: 1rem">
       <table>
         <thead>
           <tr>
-            <th>Nome Completo</th>
+            <th>ID</th>
+            <th class="text-left">Nome</th>
+            <th>Tipo</th>
             <th>CPF</th>
-            <th>Data de Nascimento</th>
-            <th>Estado Civil</th>
+            <th>Data de nascimento</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>Ana Souza</td>
-            <td>123.456.789-00</td>
-            <td>15/04/1990</td>
-            <td>Solteira</td>
-          </tr>
-          <tr>
-            <td>João Oliveira</td>
-            <td>987.654.321-00</td>
-            <td>30/11/1985</td>
-            <td>Casado</td>
-          </tr>
-          <tr>
-            <td>Maria Lima</td>
-            <td>456.123.789-55</td>
-            <td>22/07/1978</td>
-            <td>Divorciada</td>
-          </tr>
-          <tr>
-            <td>Pedro Henrique</td>
-            <td>321.987.654-22</td>
-            <td>10/01/1992</td>
-            <td>União Estável</td>
-          </tr>
-        </tbody>
+        <tbody id="lista-colaboradores"></tbody>
       </table>
     </div>
   </main>

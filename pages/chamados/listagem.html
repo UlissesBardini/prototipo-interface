@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <title>Sistema de Chamados</title>
   <link rel="stylesheet" href="/style.css"/>
+  <script src="/scripts/util.js" defer></script>
   <script src="/scripts/sidebar.js" defer></script>
   <script src="/scripts/header.js" defer></script>
   <script src="/scripts/chamados.js" defer></script>
-  <title>Listagem de Chamados</title>
 </head>
 <body>
-  <nav id="sidebar"></nav>
-  <header id="header"></header>
   <main>
+    <h1>Listar chamados</h1>
     <div class="container">
       <div class="campo">
-        <label for="filtroDescricao">Descrição</label>
-        <input type="text" id="filtroDescricao" name="descricao" placeholder="Buscar por palavras-chave...">
+        <label for="filtroTitulo">Título</label>
+        <input type="text" id="filtroTitulo" name="titulo" placeholder="Busca por título">
       </div>
       <div class="campo">
         <label for="filtroStatus">Status</label>
@@ -29,26 +28,21 @@
         <label for="filtroTipo">Tipo de Problema</label>
         <select id="filtroTipo" name="tipo">
           <option value="">Selecione...</option>
-          <option value="conexao">Conexão</option>
-          <option value="hardware">Hardware</option>
-          <option value="software">Software</option>
-          <option value="acesso">Acesso</option>
-          <option value="outro">Outro</option>
         </select>
       </div>
       <div class="campo">
         <button onclick="filtrar()" class="btn submit">Filtrar</button>
       </div>
     </div>
-    <div id="chamados-container">
+    <div style="margin: 1rem">
       <table>
         <thead>
           <tr>
             <th>ID</th>
             <th>Atualizado Em</th>
             <th class="text-left">Atendente</th>
-            <th class="text-left">Tópico</th>
-            <th>Tipo de Problema</th>
+            <th class="text-left">Título</th>
+            <th>Tipo</th>
             <th class="text-left">Status</th>
           </tr>
         </thead>

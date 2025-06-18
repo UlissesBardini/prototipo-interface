@@ -9,9 +9,10 @@ html {
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     min-height: 100vh;
+    max-width: 100vw;
     height: auto;
     display: grid;
     grid-template-columns: auto 1fr;
@@ -34,6 +35,7 @@ main {
     grid-area: main;
     padding: 1rem;
     background-color: aliceblue;
+    max-width: 100%;
 }
 
 footer {
@@ -94,6 +96,11 @@ button.btn {
 
 .campo label {
     margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.campo span {
+    margin-top: -0.25rem;
 }
 
 .campo input[type="text"],
@@ -104,4 +111,17 @@ button.btn {
     border: 1px solid black;
     border-radius: 3px;
     box-sizing: border-box;
+}
+
+h1 {
+    margin-left: 1rem;
+    font-size: x-large;
+}
+
+h3 {
+    margin: 0;
+}
+
+.obrigatorio {
+    color: red;
 }

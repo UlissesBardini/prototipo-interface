@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sistema de Chamados</title>
+  <link rel="stylesheet" href="/style.css"/>
+  <script src="/scripts/util.js" defer></script>
+  <script src="/scripts/sidebar.js" defer></script>
+  <script src="/scripts/header.js" defer></script>
+  <script src="/scripts/visualizarChamado.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Visualizar Chamado</h1>
+    <div class="container">
+      <div class="campo">
+        <label>Criado em: </label>
+        <span id="campoCriadoEm"></span>
+      </div>
+      <div class="campo">
+        <label>Atualizado em: </label>
+        <span id="campoAtualizadoEm"></span>
+      </div>
+      <div class="campo">
+        <label>Status: </label>
+        <span id="campoStatus"></span>
+      </div>
+      <div class="campo">
+        <label>Solicitante: </label>
+        <span id="campoSolicitante"></span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="campo">
+        <label for="campoTipo">Tipo de problema:</label>
+        <select id="campoTipo" name="tipo" disabled>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="campoSistema">Sistema:</label>
+        <select id="campoSistema" name="sistema" disabled>
+          <option value="">--</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="campoPrioridade">Prioridade:</label>
+        <select id="campoPrioridade" name="prioridade" onchange="atualizarPrioridade()">
+          <option value="">Selecione...</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="campoAtendente">Atendente:</label>
+        <select id="campoAtendente" name="atendente" onchange="atualizarAtendente()">
+          <option value="">Selecione...</option>
+        </select>
+      </div>
+    </div>
+    <div class="container">
+      <h3 id="campoTitulo"></h3>
+    </div>
+    <div class="container">
+      <a id="campoDescricao"></a>
+    </div>
+    <div class="container">
+      <button class="btn submit">
+        Concluir
+      </button>
+    </div>
+  </main>
+  <footer>
+    Todos os direitos reservados. Equipe: Henrique Delevati, Augusto Biehl, Mateus Botega e Ulisses Bardini
+  </footer>
+</body>
+</html>
