@@ -1,20 +1,14 @@
 const listaChamados = document.getElementById("lista-chamados");
 
 const filtroTitulo = document.getElementById("filtroTitulo");
-const filtroStatus = document.getElementById("filtroStatus");
-const filtroTipo = document.getElementById("filtroTipo");
+const filtroColaborador = document.getElementById("filtroColaborador");
 
-const campoTitulo = document.getElementById("campoTitulo");
-const campoSistema = document.getElementById("campoSistema");
-const campoTipo = document.getElementById("campoTipo");
-const campoDescricao = document.getElementById("campoDescricao");
+const colaboradores = getListaLocalStorage("colaboradores")
 
 let chamadosFiltrados = [];
 
 function popularCampos() {
-    if (filtroStatus) popularCampo(filtroStatus, statuses);
-    if (campoSistema) popularCampo(campoSistema, sistemas);
-    popularCampo(filtroTipo ?? campoTipo, tiposDeProblema);
+    popularCampo(filtroColaborador, colaboradores.map(a => `${a.nome} ${a.sobrenome}`));
 }
 
 function getChamados() {
@@ -23,14 +17,12 @@ function getChamados() {
 }
 
 function filtrar() {
-    const descricao = filtroTitulo.value;
-    const status = filtroStatus.value ?? undefined;
-    const tipo = filtroTipo.value ?? undefined;
+    const titulo = filtroTitulo.value;
+    const colaborador = filtroColaborador.value ?? undefined;
 
     chamadosFiltrados = getChamados();
-    if (descricao.length) chamadosFiltrados = chamadosFiltrados.filter(c => c.titulo.includes(descricao));
-    if (status) chamadosFiltrados = chamadosFiltrados.filter(c => c.status === status);
-    if (tipo) chamadosFiltrados = chamadosFiltrados.filter(c => c.tipoDeProblema === tipo);
+    if (titulo.length) chamadosFiltrados = chamadosFiltrados.filter(c => c.titulo.includes(titulo));
+    if (colaborador) chamadosFiltrados = chamadosFiltrados.filter(c => c.solicitante === colaborador)
 
     renderChamados();
 }
@@ -51,7 +43,7 @@ function salvar() {
         tipoDeProblema,
         descricao,
         status: "Novo",
-        solicitante: MEU_NOME_COMPLETO,
+        solicitante: MEU_NOME,
         criadoEm: new Date().toISOString(),
         atualizadoEm: new Date().toISOString(),
     }

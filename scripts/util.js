@@ -1,4 +1,5 @@
 const MEU_NOME = localStorage.getItem("login");
+const MEU_NOME_COMPLETO = localStorage.getItem("nomeCompleto");
 
 const statuses = ["Novo", "Esperando resposta", "Respondido", "Concluído", "Cancelado"];
 const tiposDeProblema = ["Conexão", "Hardware", "Software", "Acesso", "Outro"];

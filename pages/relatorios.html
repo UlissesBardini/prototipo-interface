@@ -4,63 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistema de Chamados</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="/style.css"/>
   <script src="/scripts/util.js" defer></script>
   <script src="/scripts/sidebar.js" defer></script>
   <script src="/scripts/header.js" defer></script>
+  <script src="/scripts/relatorios.js" defer></script>
 </head>
 <body>
   <main>
+    <h1>Relatórios</h1>
     <div class="container">
-      <h2>Relatório de Chamados</h2>
-
-      <form id="filterForm" class="filters">
-        <div>
-          <label for="filtroColaborador">Nome do Colaborador</label>
-          <input type="text" id="filtroColaborador" name="colaborador" placeholder="Buscar por nome...">
-        </div>
-
-        <div>
-          <label for="filtroDescricao">Descrição do Chamado</label>
-          <input type="text" id="filtroDescricao" name="descricao" placeholder="Buscar por descrição...">
-        </div>
-
-        <div style="align-self: flex-end;">
-          <button type="submit">Filtrar</button>
-        </div>
-      </form>
-
+      <div class="campo">
+        <label for="filtroTitulo">Título</label>
+        <input type="text" id="filtroTitulo" name="titulo" placeholder="Busca por título">
+      </div>
+      <div class="campo">
+        <label for="filtroColaborador">Solicitante</label>
+        <select id="filtroColaborador" name="colaborador">
+          <option value="">Selecione...</option>
+        </select>
+      </div>
+      <div class="campo">
+        <button onclick="filtrar()" class="btn submit">Filtrar</button>
+      </div>
+    </div>
+    <div style="margin: 1rem">
       <table>
         <thead>
           <tr>
             <th>ID</th>
-            <th>Título</th>
-            <th>Atendente</th>
+            <th>Atualizado Em</th>
+            <th class="text-left">Atendente</th>
+            <th class="text-left">Título</th>
+            <th>Tipo</th>
+            <th class="text-left">Status</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Erro ao acessar módulo financeiro</td>
-            <td>João Oliveira</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Demora no carregamento da tela de login</td>
-            <td>Maria Lima</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Falha na geração de relatórios</td>
-            <td>Pedro Henrique</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Permissão negada ao salvar pedidos</td>
-            <td>Ana Souza</td>
-          </tr>
-        </tbody>
+        <tbody id="lista-chamados"></tbody>
       </table>
     </div>
   </main>

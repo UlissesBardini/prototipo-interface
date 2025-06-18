@@ -40,7 +40,7 @@ function init() {
         location.href = "/pages/chamados/listagem.html";
     }
 
-    chamado = getListaLocalStorage("chamados").at(id - 1);
+    chamado = getListaLocalStorage("chamados").find(c => c.id === id);
 
     if (!chamado) {
         location.href = "/pages/chamados/listagem.html";
@@ -61,6 +61,22 @@ function atualizarPrioridade() {
     chamados.at(chamado.id-1).prioridade = prioridadeSelecionada;
     setListaLocalStorage("chamados", chamados);
     alert("Prioridade atualizada com sucesso!");
+}
+
+function concluir() {
+    const chamados = getListaLocalStorage("chamados");
+    chamados.find(c => c.id === chamado.id).status = "Concluído";
+    setListaLocalStorage("chamados", chamados);
+    alert("Chamado concluido!");
+    campoStatus.innerText = "Concluído"
+}
+
+function cancelar() {
+    const chamados = getListaLocalStorage("chamados");
+    chamados.find(c => c.id === chamado.id).status = "Cancelado";
+    setListaLocalStorage("chamados", chamados);
+    alert("Chamado cancelado!");
+    campoStatus.innerText = "Cancelado"
 }
 
 init();

@@ -4,7 +4,7 @@ header.innerHTML = `<div class="botao-header-container">
     <a class="btn main-button" href="/pages/chamados/abrirChamado.html">Abrir Chamado</a>
 </div>
     <div class="username-container">
-        <a id="username">${MEU_NOME}</a>
+        <a id="username">${MEU_NOME_COMPLETO}</a>
     </div>
 <div class="foto-perfil-container">
     <img src="/assets/userprofile.png" class="foto-perfil">

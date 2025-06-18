@@ -38,3 +38,21 @@ button.addEventListener('click', () => {
 toggleButton.addEventListener('click', () => {
     sidebar.classList.toggle("close");
 });
+
+const links = document.querySelectorAll("#sidebar li:has(a)");
+
+if (location.pathname.startsWith("/pages/chamados")) {
+    links.item(0).classList.add("active");
+}
+
+if (location.pathname === "/pages/colaboradores/cadastro.html") {
+    links.item(2).classList.add("active");
+}
+
+if (location.pathname === "/pages/colaboradores/listagem.html") {
+    links.item(3).classList.add("active");
+}
+
+if (location.pathname === "/pages/relatorios.html") {
+    links.item(4).classList.add("active");
+}
